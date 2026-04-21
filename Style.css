@@ -556,11 +556,18 @@ img {
 
   .hero-visual {
     top: 128px;
-    left: 35%;
+    left: 30%;
     right: auto;
     width: min(74vw, 290px);
     --hero-rise-transform: translateX(-2%);
   }
+
+  .hero-tag {
+    top: 18px;
+    left: 10px;
+    font-size: 0.85rem;
+  }
+
 
   .hero-copy {
     top: 450px;
