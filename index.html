@@ -1,129 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-    <link rel="stylesheet" href="style.css" />
-    <title>Portfolio</title>
-
-<script>
-
-     
-    </script>
-
-  </head><script src="https://kit.fontawesome.com/16dc9b612e.js" crossorigin="anonymous"></script>
-  <body>
-    <nav>
-      <div class="nav__content">
-        <div class="logo"><a href="#">☼</a></div>
-        <label for="check" class="checkbox">
-          <i class="ri-menu-line"></i>
-        </label>
-        <input type="checkbox" name="check" id="check" />
-        <ul>
-          <li><a href="https://srivsnu.my.canva.site/edu-intern" target="_blank">Edu & Internships</a></li>
-          <li><a href="https://srivsnu.my.canva.site/projects" target="_blank">Projects</a></li>
-          <li><a href="mailto:srivsnu@gmail.com" target="_blank">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <section class="section">
-      <div class="section__container">
-        <div class="content">
-          <p class="subtitle">HELLO</p>
-          <h1 class="title">
-            I'm <span>SRI VISHNU</span><br /></h1>
-                <div class="container">
-                    <span class="text static-txt" style="font-weight: 400;">a </span>
-                    <span class="text dynamic-txt">UI/UX DEESIGNER</span>
-                </div>
-                <script>
-                    const text=document.querySelector(".dynamic-txt");
-                    const textLoad =()=>{
-                        setTimeout(()=>{
-                          text.textContent = "GRAPHIC DESIGNER";  
-                        },0);
-                        setTimeout(()=>{
-                            text.textContent = "VIDEO EDITOR";
-                        },4000);
-                        setTimeout(()=>{
-                          text.textContent = "UI/UX DESIGNER";  
-                        },8000);
-                    }
-
-                    textLoad();
-                    setInterval(textLoad,12000);
-                </script>
-          
-          <p class="description">
-            Welcome to my profile. I’m a Graphic Designer with strong experience in digital marketing, branding, and UI/UX design,
-             creating visuals that are not just good-looking but purposeful. From social media creatives, ads, and packaging to websites,
-             presentations, and video content, I’ve worked across agencies and freelance projects,
-             collaborating with teams and clients to deliver high-quality, strategy-driven designs.
-          </p>
-          <div class="social-icons">
-            <a href="https://www.youtube.com/@vishnuj.design" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.instagram.com/vishnuj.design/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/srivishnujagirdhar" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/vishnujagirdhar" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishnu | Graphic Designer</title>
+  <meta name="description" content="Landing page for Vishnu, graphic designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <main class="page-shell">
+    <section class="hero" aria-label="Vishnu landing page">
+      <div class="hero-card">
+        <div class="hero-tag" aria-label="About Me">
+          <svg class="hero-tag__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4Zm0-8a2 2 0 1 1-2 2 2 2 0 0 1 2-2Zm0 10c3.866 0 6 1.48 6 2v.002H6V17c0-.52 2.134-2 6-2Z"/>
+          </svg>
+          <span>About Me</span>
         </div>
-          <div class="action__btns">
-            <a href="https://srivsnu.my.canva.site/portfolio" target="_blank"><button class="portfolio">   --Editor Portfolio--   </button></a>
-            <!--<a href="https://drive.google.com/file/d/1kugZgCS86zPT2UHPSmxzlzZU5CPEz0TP/view?usp=sharing"><button class="hire__me">Download Resume</button></a>-->  
-            
+
+        <a class="hero-meta" href="https://srivsnu.my.canva.site/edu-intern" target="_blank" rel="noopener noreferrer">Education &amp;<br>Internship</a>
+
+        <div class="hero-copy">
+          <p class="hero-kicker">Hi I'm</p>
+          <h1 class="hero-title">Vishnu</h1>
+          <p class="hero-role"><span class="dynamic-txt" aria-live="polite">GRAPHIC DESIGNER</span></p>
+
+          <a class="hero-email" href="mailto:srivsnu@gmail.com">
+            <span>srivsnu@gmail.com</span>
+            <svg class="hero-email__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 2v.217l8 5.333 8-5.333V8H4Zm16 8V10.616l-7.445 4.964a1 1 0 0 1-1.11 0L4 10.616V16h16Z"/>
+            </svg>
+          </a>
+          <span class="hero-email-line" aria-hidden="true"></span>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="portrait-ring">
+            <div class="portrait-glow"></div>
+            <img src="01.png" alt="Vishnu portrait">
           </div>
         </div>
-        <div class="image">
-          <img src="Untitled-1.png" alt="profile" />
-        </div>
+
+        <a class="hero-cta" href="https://srivsnu.my.canva.site/portfolio" target="_blank" rel="noopener noreferrer"><span class="hero-cta__label">Explore My designs</span></a>
       </div>
-
-      <script>
-  document.querySelector(".logo a").addEventListener("click", function (e) {
-    e.preventDefault(); // prevents page jump
-    document.body.classList.toggle("invert");
-  });
-</script>
-
-<div class="liquid-cursor"></div>
-
-<script>
-  const cursor = document.querySelector(".liquid-cursor");
-
-  let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
-  const size = 40;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animate() {
-    currentX += (mouseX - currentX) * 0.12;
-    currentY += (mouseY - currentY) * 0.12;
-
-    cursor.style.transform = `translate3d(${currentX - size / 2}px, ${currentY - size / 2}px, 0)`;
-
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-</script>
-
-
-
     </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = document.querySelector(".dynamic-txt");
+      const cursorGlow = document.querySelector(".cursor-glow");
+      const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
+      if (!text) {
+        return;
+      }
 
+      const textLoad = () => {
+        setTimeout(() => {
+          text.textContent = "GRAPHIC DESIGNER";
+        }, 0);
 
+        setTimeout(() => {
+          text.textContent = "VIDEO EDITOR";
+        }, 4000);
 
-  </body>
+        setTimeout(() => {
+          text.textContent = "UI/UX DESIGNER";
+        }, 8000);
+      };
+
+      textLoad();
+      setInterval(textLoad, 12000);
+
+      if (cursorGlow && finePointer.matches) {
+        const interactiveItems = document.querySelectorAll("a");
+
+        document.addEventListener("pointermove", (event) => {
+          cursorGlow.style.opacity = "1";
+          cursorGlow.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        });
+
+        document.addEventListener("pointerleave", () => {
+          cursorGlow.style.opacity = "0";
+        });
+
+        interactiveItems.forEach((item) => {
+          item.addEventListener("pointerenter", () => {
+            cursorGlow.classList.add("is-link");
+          });
+
+          item.addEventListener("pointerleave", () => {
+            cursorGlow.classList.remove("is-link");
+          });
+        });
+      }
+    });
+  </script>
+</body>
 </html>
