@@ -3,7 +3,6 @@
   --accent: #ff6d78;
   --paper: #fefefe;
   --panel-fill: #fefefe;
-  --dot: rgba(0, 0, 0, 0.08);
   --glass-gradient: linear-gradient(110deg, #62e9ff 0%, #d8a9ff 52%, #ff6d78 100%);
 }
 
@@ -40,58 +39,51 @@ a {
 
 .hero {
   width: min(100%, 1920px);
+  transition:
+    width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    max-width 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-stage {
-  --cursor-x: 50%;
-  --cursor-y: 50%;
-  --cursor-dot-opacity: 0;
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   isolation: isolate;
-  background-image:
-    url("background 01 no bg.png"),
-    radial-gradient(circle, var(--dot) 1px, transparent 1.2px);
-  background-position:
-    center,
-    0 0;
-  background-size:
-    100% 100%,
-    clamp(12px, 1vw, 18px) clamp(12px, 1vw, 18px);
-  background-repeat:
-    no-repeat,
-    repeat;
   background-color: var(--paper);
   transform-origin: center center;
   animation: page-pop-in 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition:
+    aspect-ratio 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-size 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-position 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    min-height 520ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity, filter;
 }
 
-.hero-stage::before {
+.hero-stage::before,
+.hero-stage::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(158, 161, 253, 0.88) 1px, transparent 1.25px);
-  background-position: 0 0;
-  background-size: clamp(12px, 1vw, 18px) clamp(12px, 1vw, 18px);
-  opacity: var(--cursor-dot-opacity);
-  mask-image: radial-gradient(
-    circle 150px at var(--cursor-x) var(--cursor-y),
-    #000 0%,
-    rgba(0, 0, 0, 0.78) 42%,
-    transparent 100%
-  );
-  -webkit-mask-image: radial-gradient(
-    circle 150px at var(--cursor-x) var(--cursor-y),
-    #000 0%,
-    rgba(0, 0, 0, 0.78) 92%,
-    transparent 100%
-  );
-  transition: opacity 180ms ease;
+  background-repeat: no-repeat;
+  transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-stage::before {
+  background-image: url("background 01 no bg.png");
+  background-position: center;
+  background-size: 100% 100%;
+  opacity: 1;
+}
+
+.hero-stage::after {
+  background-image: url("mobile view hero image.png");
+  background-position: center top;
+  background-size: contain;
+  opacity: 0;
 }
 
 .hero-stage > * {
@@ -106,6 +98,17 @@ a {
 .social-links,
 .hero-email {
   position: absolute;
+  transition:
+    top 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    right 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    bottom 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    left 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    min-width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    font-size 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 360ms ease;
 }
 
 .hero-tag {
@@ -236,7 +239,7 @@ a {
   padding: 0 1.35em;
   overflow: visible;
   border: 2px solid transparent;
-  border-radius: 0;
+  border-radius: 10px;
   background: #A30000;
   color: #ffffff;
   box-shadow: none;
@@ -248,6 +251,12 @@ a {
   white-space: nowrap;
   animation: cta-soft-wiggle 1.8s ease-in-out infinite;
   transition:
+    top 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    left 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    min-width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    font-size 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
     background-color 360ms ease,
     border-color 360ms ease,
     border-radius 420ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -353,31 +362,14 @@ a {
 
   .hero-stage {
     aspect-ratio: 9 / 16;
-    background-image:
-      url("mobile view hero image.png"),
-      radial-gradient(circle, var(--dot) 1px, transparent 1.2px);
-    background-position:
-      center top,
-      0 0;
-    background-size:
-      contain,
-      12px 12px;
   }
 
   .hero-stage::before {
-    background-size: 12px 12px;
-    mask-image: radial-gradient(
-      circle 110px at var(--cursor-x) var(--cursor-y),
-      #000 0%,
-      rgba(0, 0, 0, 0.72) 42%,
-      transparent 100%
-    );
-    -webkit-mask-image: radial-gradient(
-      circle 110px at var(--cursor-x) var(--cursor-y),
-      #000 0%,
-      rgba(0, 0, 0, 0.72) 42%,
-      transparent 100%
-    );
+    opacity: 0;
+  }
+
+  .hero-stage::after {
+    opacity: 1;
   }
 
   .hero-tag {
