@@ -73,14 +73,14 @@ a {
 }
 
 .hero-stage::before {
-  background-image: url("background 01 no bg.png");
+  background-image: url("background 01 - Copy.png");
   background-position: center;
   background-size: 100% 100%;
   opacity: 1;
 }
 
 .hero-stage::after {
-  background-image: url("mobile view hero image.png");
+  background-image: url("mobile view hero image copy.png");
   background-position: center top;
   background-size: contain;
   opacity: 0;
@@ -132,7 +132,7 @@ a {
 .hero-meta {
   top: 11.4%;
   right: 10.4%;
-  color: #A30000;
+  color: #8184d3;
   font-size: clamp(0.54rem, 1.34vw, 1.5rem);
   line-height: 1;
   font-weight: 300;
@@ -168,21 +168,44 @@ a {
   display: inline-block;
   position: relative;
   min-width: 16ch;
-  color: #A30000;
-  -webkit-text-fill-color: #A30000;
+  color: #8184d3;
+  -webkit-text-fill-color: #8184d3;
+  overflow: hidden;
+  vertical-align: bottom;
+  clip-path: inset(0 0 0 0);
+  animation: dynamic-type 4s steps(18) infinite;
 }
 
-.dynamic-txt::before {
+.dynamic-txt::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-color: var(--panel-fill);
-  border-left: 2px solid #A30000;
-  animation: dynamic-reveal 4s steps(18) infinite;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  border-left: 2px solid #8184d3;
+  animation: dynamic-cursor 4s steps(18) infinite;
 }
 
-@keyframes dynamic-reveal {
+@keyframes dynamic-type {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  40%,
+  60% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes dynamic-cursor {
+  0% {
+    left: 0%;
+  }
+
   40%,
   60% {
     left: calc(100% + 4px);
@@ -240,7 +263,7 @@ a {
   overflow: visible;
   border: 2px solid transparent;
   border-radius: 10px;
-  background: #A30000;
+  background: #8184d3;
   color: #ffffff;
   box-shadow: none;
   backdrop-filter: none;
@@ -270,10 +293,10 @@ a {
 }
 
 .hero-cta:hover {
-  border: 2px solid #A30000;
+  border: 2px solid #8184d3;
   border-radius: 18px;
   background: transparent;
-  color: #A30000;
+  color: #8184d3;
   box-shadow: 0 4px 12px rgba(163, 0, 0, 0.08);
 }
 
@@ -307,14 +330,14 @@ a {
   aspect-ratio: 1;
   display: inline-grid;
   place-items: center;
-  color: #A78989;
-  opacity: 0.78;
+  color: #8184d3;
+  opacity: 0.5;
   filter: none;
   transition: opacity 180ms ease, transform 180ms ease, filter 180ms ease;
 }
 
 .social-link:hover {
-  opacity: 1;
+  opacity: 0.82;
   transform: translateY(-1px);
   filter: none;
 }
@@ -340,7 +363,7 @@ a {
   display: block;
   width: 100%;
   margin-top: 0.34em;
-  border-top: 2px dashed #A30000;
+  border-top: 2px dashed #8184d3;
 }
 
 @media (max-width: 760px) {
@@ -467,7 +490,8 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .hero-stage,
   .hero-stage > *,
-  .dynamic-txt::before,
+  .dynamic-txt,
+  .dynamic-txt::after,
   .hero-cta,
   .hero-cta::after {
     animation: none;
