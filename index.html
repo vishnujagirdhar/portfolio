@@ -94,7 +94,6 @@
     document.addEventListener("DOMContentLoaded", () => {
       const text = document.querySelector(".dynamic-txt");
       const cursorGlow = document.querySelector(".cursor-glow");
-      const heroStage = document.querySelector(".hero-stage");
       const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
       if (!text) {
@@ -117,22 +116,6 @@
 
       textLoad();
       setInterval(textLoad, 12000);
-
-      if (heroStage && finePointer.matches) {
-        heroStage.addEventListener("pointermove", (event) => {
-          const rect = heroStage.getBoundingClientRect();
-          const x = ((event.clientX - rect.left) / rect.width) * 100;
-          const y = ((event.clientY - rect.top) / rect.height) * 100;
-
-          heroStage.style.setProperty("--cursor-x", `${x}%`);
-          heroStage.style.setProperty("--cursor-y", `${y}%`);
-          heroStage.style.setProperty("--cursor-dot-opacity", "1");
-        });
-
-        heroStage.addEventListener("pointerleave", () => {
-          heroStage.style.setProperty("--cursor-dot-opacity", "0");
-        });
-      }
 
       if (cursorGlow && finePointer.matches) {
         const interactiveItems = document.querySelectorAll("a");
